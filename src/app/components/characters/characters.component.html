@@ -1,0 +1,26 @@
+<div *ngIf="pageEvent" class="container">
+  <div class="row">
+    <!-- bootstrap grid system -->
+
+    <div *ngFor="let pers of personnages" class="mt-4 col-sm-4">
+        <mat-card  class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>{{pers.name}}</mat-card-title>
+              <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="{{ getImage(pers)}}" alt="Photo of">
+            <mat-card-content>
+              <p>
+                {{pers.description}}
+              </p>
+            </mat-card-content>
+          </mat-card>
+    </div>
+
+  </div>
+</div>
+
+<mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+  (page)="pageEvent = getServerData($event)">
+</mat-paginator>
