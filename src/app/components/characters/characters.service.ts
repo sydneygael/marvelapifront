@@ -10,6 +10,7 @@ export class CharactersService {
   constructor(private http: HttpClient) { }
 
   getCharacters(offset,limit) : Observable<any> {
+    var offset = offset || 0;
     //set the params
     let params = new HttpParams().set('offset', offset).set('limit',limit);
     
