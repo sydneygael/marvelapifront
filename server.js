@@ -5,7 +5,7 @@ var cors = require('cors');
 
 const app = express();
 
-var allowedOrigins = ['http://localhost:3000','http://localhost:4200','http://marvelapi-sydney.herokuapp.com/'];
+var allowedOrigins = ['http://localhost:3000','http://localhost:4200','https://marvelapi-sydney.herokuapp.com/','http://marvelapi-sydney.herokuapp.com/'];
 
 
 
