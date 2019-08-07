@@ -5,7 +5,13 @@ var cors = require('cors');
 
 const app = express();
 
-var allowedOrigins = ['http://localhost:3000','http://localhost:4200','https://marvelapi-sydney.herokuapp.com/'];
+var allowedOrigins = ['http://localhost:3000','http://localhost:4200','http://marvelapi-sydney.herokuapp.com/'];
+
+
+
+
+// Serve only the static files form the dist directory
+app.use(express.static(__dirname + '/dist/'));
 
 app.use(cors({
 	origin: function(origin, callback){
@@ -21,11 +27,7 @@ app.use(cors({
 	}
   }));
 
-// Serve only the static files form the dist directory
-app.use(express.static(__dirname + '/dist/'));
-
 app.get('/*', function(req,res) {
-    
 res.sendFile(path.join(__dirname+'/dist/index.html'));
 });
 

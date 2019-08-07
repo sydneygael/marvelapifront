@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 export class CharactersService {
 
   url = 'http://localhost:8080';
-  urlProd = 'https://marvelapi-sydney.herokuapp.com'
+  urlProd = 'http://marvelapi-sydney.herokuapp.com'
   constructor(private http: HttpClient) { }
 
   getCharacters(offset,limit) : Observable<any> {
